@@ -437,7 +437,7 @@ void _mat_mul_tn(matrix* out, const matrix* a, const matrix* b) {
 void _mat_mul_tt(matrix* out, const matrix* a, const matrix* b) {
     for (u64 i = 0; i < out->rows; i++) {
         for (u64 j = 0; j < out->cols; j++) {
-            for (u64 k = 0; k < a->cols; k++) {
+            for (u64 k = 0; k < a->rows; k++) {
                 out->data[j + i * out->cols] += 
                     a->data[i + k * a->cols] * 
                     b->data[k + j * b->cols];
