@@ -159,7 +159,7 @@ void arena_temp_end(mem_arena_temp temp) {
     arena_pop_to(temp.arena, temp.start_pos);
 }
 
-__thread static mem_arena* _scratch_arenas[2] = { NULL, NULL };
+static __thread mem_arena* _scratch_arenas[2] = { NULL, NULL };
 
 mem_arena_temp arena_scratch_get(mem_arena** conflicts, u32 num_conflicts) {
     i32 scratch_index = -1;
@@ -228,7 +228,14 @@ b32 plat_mem_release(void* ptr, u64 size) {
 
 #elif defined(__linux__)
 
-u32 plat_page_size(void) {
+#ifndef _DEFAULT_SOURCE
+#define _DEFAULT_SOURCE
+#endif
+
+#include <unistd.h>
+#include <sys/mman.h>
+
+u32 plat_get_pagesize(void) {
     return (u32)sysconf(_SC_PAGESIZE);
 }
 

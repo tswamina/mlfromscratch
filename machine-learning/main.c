@@ -22,7 +22,7 @@ void mat_fill(matrix* mat, f32 x);
 void mat_fill_rand(matrix* mat, f32 lower, f32 upper);
 void mat_scale(matrix* mat, f32 scale);
 f32 mat_sum(matrix* mat);
-u32 mat_argmax(matrix* mat);
+u64 mat_argmax(matrix* mat);
 b32 mat_add(matrix* out, const matrix* a, const matrix* b);
 b32 mat_sub(matrix* out, const matrix* a, const matrix* b);
 b32 mat_mul(
@@ -353,10 +353,10 @@ f32 mat_sum(matrix* mat) {
     return sum;
 }
 
-u32 mat_argmax(matrix* mat) {
+u64 mat_argmax(matrix* mat) {
     u64 size = (u64)mat->rows * mat->cols;
 
-    u32 max_i = 0;
+    u64 max_i = 0;
     for (u64 i = 0; i < size; i++) {
         if (mat->data[i] > mat->data[max_i]) {
             max_i = i;
@@ -1067,7 +1067,7 @@ void model_train(
 
         avg_cost /= (f32)num_tests;
         printf(
-            "Test Completed. Accuracy: %5d / %d (%.1f%%), Average Cost: %.4f\n",
+            "Test Completed. Accuracy: %5d / %5d (%.1f%%), Average Cost: %.4f\n",
             num_correct, num_tests, (f32)num_correct / num_tests * 100.0f,
             avg_cost
         );
