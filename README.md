@@ -1,5 +1,5 @@
-An extension of @magicalbat's machine learning library
+### An extension of @magicalbat's machine learning library
 
 https://garden.tanushswaminathan.com/writings/science/Genomics-ML-Library-Speedrun
 
---> refer to README_genoml.md
+### --> refer to README_genoml.md
