@@ -1,6 +1,6 @@
 # GenomL - Machine Learning for Quantitative Biology
 
-A Python library for applying machine learning to genomics and quantitative biology problems. Built on top of a from-scratch ML implementation in C, GenomL provides tools specifically designed for DNA/RNA sequence analysis.
+A Python library for applying machine learning to genomics and quantitative biology problems. Built on top of a from-scratch ML implementation in C, provides tools specifically designed for DNA/RNA sequence analysis.
 
 ## Features
 
@@ -166,14 +166,12 @@ mlfromscratch/
 
 ## Original C Library
 
-This project builds on a from-scratch machine learning library implemented in C, which includes:
+This project builds on a from-scratch machine learning library implemented in C by @magicalbat, which includes:
 
 - Matrix operations with manual memory management
 - Computation graph-based automatic differentiation
 - Basic neural network training (demonstrated with MNIST)
 - Arena-based memory allocation
-
-The Python `genoml` package extends this with biology-specific features while maintaining a similar philosophy of implementing things from first principles.
 
 ## License
 
