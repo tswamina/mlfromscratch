@@ -47,7 +47,7 @@ A Python library for applying machine learning to genomics and quantitative biol
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/mlfromscratch.git
+git clone https://github.com/tswamina/mlfromscratch.git
 cd mlfromscratch
 
 # Install in development mode
